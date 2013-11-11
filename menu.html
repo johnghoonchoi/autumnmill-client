@@ -1,0 +1,58 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+</head>
+<body>
+<div data-role="page">
+	<div data-role="header" data-theme="a"  data-position="fixed">
+		<a href="main.html" data-icon="home" data-iconpos="notext" data-theme="b">    
+	    </a><h1>가을방아</h1>
+	    <a href="#" data-icon="grid">SiteMap</a>
+
+		<div data-role="navbar">
+		<ul>
+			<li><a href="intro.html">가을방아</a></li>
+			<li><a href="menu.html" class="ui-btn-active ui-state-persist" >메뉴판</a></li>
+			<li><a href="where.html">오시는길</a></li>
+			<li><a href="info.html">구입정보</a></li>
+		</ul>
+		</div>
+	</div><!--헤더끝 컨텐트시작-->
+	<div data-role="content">
+		<div data-role="collapsible-set" data-collapsed-icon="arrow-l" data-expanded-icon="arrow-d" data-iconpos="right" data-mini="true">
+			 <div data-role="collapsible" data-mini="true">
+			 	<h3>행사떡</h3>
+			 	<ul data-role="listview" data-inset="false">
+			 		<li><a href="menupopup.html" data-rel="dialog">돌떡</a></li>
+			 		<li><a href="menupopup.html" data-rel="dialog">결혼떡</a></li>
+			 		<li><a href="menupopup.html" data-rel="dialog">잔치떡</a></li>
+			 	</ul>
+			 </div>
+			 <div data-role="collapsible" data-mini="true">
+			 	<h3>간식떡</h3>
+			 	<ul data-role="listview" data-inset="false">
+			 		<li><a href="menupopup.html" data-rel="dialog">인절미</a></li>
+			 		<li><a href="menupopup.html" data-rel="dialog">찰떡</a></li>
+			 		<li><a href="menupopup.html" data-rel="dialog">가래떡</a></li>
+			 	</ul>
+			 </div>
+			 <div data-role="collapsible" data-mini="true">
+			 	<h3>기타1</h3>
+			 	<ul data-role="listview" data-inset="false">
+			 		<li><a href="menupopup.html" data-rel="dialog">기타세부1</a></li>
+			 		<li><a href="menupopup.html" data-rel="dialog">기타세부2</a></li>
+			 		<li><a href="menupopup.html" data-rel="dialog">기타세부3</a></li>
+			 	</ul>
+			 </div>
+		</div>
+	</div><!--컨텐트끝 푸터시작-->
+	<div data-role="footer">
+	@가을방아
+	</div>
+</div>
+</body>
+</html>

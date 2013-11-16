@@ -24,15 +24,12 @@
   <script src="jquery.ui.map.full.min.js" type="text/javascript"></script>
 
   <script type="text/javascript">
-  $($'map_canvas').load(function){
-    alert("loadtest1");
-  }
+  	
    $(function() {
-    alert("로딩");
             // Also works with: var yourStartLatLng = '59.3426606750, 18.0736160278';
             var yourStartLatLng = new google.maps.LatLng(37.548128, 126.918691);
             $('#map_canvas').gmap({'center':'37.548128, 126.918691','zoom':15});
-      //$('#map_canvas').gmap('addMarker',{'position':'37.548128, 126.918691'});
+			//$('#map_canvas').gmap('addMarker',{'position':'37.548128, 126.918691'});
     });
 	/*$(document).ready(function(){
 	  	mapload();
@@ -45,13 +42,9 @@
     }
 */
   </script>
-    <script type="text/javascript">
-    function myFunction(){
-      alert("test");
-    }
-    </script>
+
     </head>
-<body onload="myFunction()">
+<body>
 <div data-role="page">
   <div data-role="header" data-theme="a" data-position="fixed">
     <a href="main.html" data-icon="home" data-iconpos="notext" data-theme="b"></a>
@@ -78,7 +71,7 @@
   <!--헤더끝 컨텐트시작-->
   <div data-role="content">
     <div>오시는 방법</div>
-    <div id="map_canvas" style="width:100%;height:250px">test</div>
+    <div id="map_canvas" style="width:100%;height:250px"></div>
     <div>구글맵</div>
   </div>
   <!--컨텐트끝 푸터시작-->

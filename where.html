@@ -27,9 +27,9 @@
   	
    $(function() {
             // Also works with: var yourStartLatLng = '59.3426606750, 18.0736160278';
-            var yourStartLatLng = new google.maps.LatLng(37.548128, 126.918691);
-            $('#map_canvas').gmap({'center':'37.548128, 126.918691','zoom':15});
-			//$('#map_canvas').gmap('addMarker',{'position':'37.548128, 126.918691'});
+            var autumnmill = new google.maps.LatLng(37.548128, 126.918691);
+            $('#map_canvas').gmap({'center':autumnmill,'zoom':15});
+			      $('#map_canvas').gmap('addMarker',{'position':autumnmill});
     });
 	/*$(document).ready(function(){
 	  	mapload();

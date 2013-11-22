@@ -5,6 +5,41 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+	<script>
+
+			 	
+
+
+	$.getJSON('data.json', function(data) {
+		var items=[];
+		$("#test1").append('test123');
+		$("#test1").append('<div data-role="collapsible" data-mini="true"><h3>test</h3>');
+			 	//
+			 	//<ul data-role="listview" data-inset="false" id="test">
+			 	//	');
+		$.each(data,function(index,val){
+			//var lival ="<li><a href='menupopup.html' data-rel='dialog'>"+val.name+"</a></li>";
+			if(val.category==1){
+
+			}
+			item = '<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child ui-btn-up-c">';
+			item += '<div class="ui-btn-inner ui-li">' ;
+			item += 	'<div class="ui-btn-text">';
+			item += '<a href="menupopup.html" data-rel="dialog" class="ui-link-inherit">';	
+			item += val.name;
+			item += '</a></div></div></li>';
+			items.push(item);
+			//$("#test").append(lival);
+		});
+		console.log(data);
+		$("#test").append(items);
+		$("#test1").append('</div>');
+		//$("#test1").append('</ul>
+		//	 </div>');
+	});
+	</script>
+
+
 </head>
 <body>
 <div data-role="page">
@@ -22,24 +57,9 @@
 		</ul>
 		</div>
 	</div><!--헤더끝 컨텐트시작-->
+
 	<div data-role="content">
-		<div data-role="collapsible-set" data-collapsed-icon="arrow-l" data-expanded-icon="arrow-d" data-iconpos="right" data-mini="true">
-			 <div data-role="collapsible" data-mini="true">
-			 	<h3>행사떡</h3>
-			 	<ul data-role="listview" data-inset="false">
-			 		<li><a href="menupopup.html" data-rel="dialog">돌떡</a></li>
-			 		<li><a href="menupopup.html" data-rel="dialog">결혼떡</a></li>
-			 		<li><a href="menupopup.html" data-rel="dialog">잔치떡</a></li>
-			 	</ul>
-			 </div>
-			 <div data-role="collapsible" data-mini="true">
-			 	<h3>간식떡</h3>
-			 	<ul data-role="listview" data-inset="false">
-			 		<li><a href="menupopup.html" data-rel="dialog">인절미</a></li>
-			 		<li><a href="menupopup.html" data-rel="dialog">찰떡</a></li>
-			 		<li><a href="menupopup.html" data-rel="dialog">가래떡</a></li>
-			 	</ul>
-			 </div>
+		<div data-role="collapsible-set" data-collapsed-icon="arrow-l" data-expanded-icon="arrow-d" data-iconpos="right" data-mini="true" id="test1">
 			 <div data-role="collapsible" data-mini="true">
 			 	<h3>기타1</h3>
 			 	<ul data-role="listview" data-inset="false">
@@ -50,10 +70,12 @@
 			 </div>
 			 <div data-role="collapsible" data-mini="true">
 			 	<h3>test</h3>
-			 	<ul data-role="listview" data-inset="false" >
-			 		<script>alert("test");</script>
+			 	<ul data-role="listview" data-inset="false" id="test">
+			 		
 			 	</ul>
 			 </div>
+
+
 		</div>
 	</div><!--컨텐트끝 푸터시작-->
 	<div data-role="footer" data-position="fixed">

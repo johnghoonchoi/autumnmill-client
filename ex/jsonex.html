@@ -6,17 +6,38 @@
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
 	<script>
+	$.getJSON('data2.json',function(data){
 
-			 	
+	items = [];
+	item ="<ul>";
+	$.each(data, function(index, val) {
+       /* iterate through array or object */
+       item += val['category'];
+       list = "";
+       console.log(val['category']);
+       $.each(val['list'] , function(index, val) {
+         /* iterate through array or object */
+         $.each(this, function(index, val){
+          list += "<li>";
+          list += val.name;
+          list += "</li>";
+         });
+       });
+       item += list;
+       console.log(item);
+    });
+    item += "</ul>";
+    items.push(item);
+	$("#test").append(items);
+	});
 
 
-	$.getJSON('data.json', function(data) {
+	
+
+/*
+	$.getJSON('data2.json', function(data) {
 		var items=[];
-		$("#test1").append('test123');
-		$("#test1").append('<div data-role="collapsible" data-mini="true"><h3>test</h3>');
-			 	//
-			 	//<ul data-role="listview" data-inset="false" id="test">
-			 	//	');
+		
 		$.each(data,function(index,val){
 			//var lival ="<li><a href='menupopup.html' data-rel='dialog'>"+val.name+"</a></li>";
 			if(val.category==1){
@@ -33,10 +54,9 @@
 		});
 		console.log(data);
 		$("#test").append(items);
-		$("#test1").append('</div>');
 		//$("#test1").append('</ul>
 		//	 </div>');
-	});
+	});*/
 	</script>
 
 

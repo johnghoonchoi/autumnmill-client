@@ -33,19 +33,15 @@
 	       $.each(val['list'] , function(index, val) {
 	         /* 세부카테고리 메뉴리스트 */
 		         $.each(this, function(index, val){
-		          list += "<li id='float_style'>";
+		          list += "<div id='float_style'>";
 		          list += "<img src=";
 		          list += val.picture;
 		          list += ">";
-		          list += "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp";
-		          list += "</li>";
-		         });
-		         list +="<br><br id='float_style'>";
-		         $.each(this, function(index, val){
-		          list += "<li id='float_style'>";
+		          list += "<br>";
 		          list += val.name;
-		          list += "</li>";
+		          list += "</div>";
 		         });
+
 	       });
        item += list;
        console.log(item);

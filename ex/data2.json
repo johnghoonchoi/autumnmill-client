@@ -1,7 +1,7 @@
 [
     {
         "id": "1",
-        "category": "party",
+        "category": "행사떡",
         "list":
             {
                 "dduk":
@@ -15,7 +15,7 @@
     },
     {
         "id": "2",
-        "category": "snack",
+        "category": "간식떡",
         "list":
             {
                 "dduk":

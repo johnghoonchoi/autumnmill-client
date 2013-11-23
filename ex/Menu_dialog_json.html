@@ -14,9 +14,6 @@
     }
 	</style>
 
-
-
-
 	<script>
 	$.getJSON('data2.json',function(data){
 
@@ -34,7 +31,9 @@
 	         /* 세부카테고리 메뉴리스트 */
 		         $.each(this, function(index, val){
 		          list += "<div id='float_style'>";
-		          list += '<a href="menupopup.html" data-rel="dialog">';
+		          list += '<a href=menupopup.html?';
+		          list += val.name;
+		          list += ' data-rel="dialog">';
 		          list += "<img src=";
 		          list += val.picture;
 		          list += ">";

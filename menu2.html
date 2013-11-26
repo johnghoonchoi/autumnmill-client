@@ -18,6 +18,7 @@
 	$.getJSON('data2.json',function(data){
 
 	items = [];
+	dialist="";
 	item = '<div data-role="collapsible" data-mini="true" class="ui-collapsible ui-collapsible-inset ui-first-child">';
 	$.each(data, function(index, val) {
        /* 카테고리 분류 */
@@ -31,9 +32,9 @@
 	         /* 세부카테고리 메뉴리스트 */
 		         $.each(this, function(index, val){
 		          list += "<div id='float_style'>";
-		          list += '<a href=menupopup.html?';
-		          list += val.name;
-		          list += ' data-rel="dialog">';
+		          list += '<a href="#';
+		          list += val.id;
+		          list += '" data-rel="dialog">';
 		          list += "<img src=";
 		          list += val.picture;
 		          list += ">";
@@ -41,8 +42,19 @@
 		          list += val.name;
 		          list += "</a>";
 		          list += "</div>";
+		          /*다이얼로그 창 생성*/
+		          dialist += "<div data-role='page' data-overlay-theme='e' id=";
+		          dialist += val.id;
+		          dialist += ">"
+		          dialist += '<div data-role="header" data-theme="b"><h1>';
+		          dialist += val.name;
+		          dialist += "</h1></div>";
+		          dialist += '<div data-role="content" data-theme="d"><img src=';
+		          dialist += val.picture;
+		          dialist += "><p>";
+		          dialist += val.about;
+		          dialist += '</p></div></div>';
 		         });
-
 	       });
        item += list;
        console.log(item);
@@ -50,35 +62,9 @@
     });
     item += "</div>";
     items.push(item);
-	$("#test1").append(items);
+    $("body").append(dialist);
+	$("#menucategory").append(items);
 	});
-
-
-	
-
-/*
-	$.getJSON('data2.json', function(data) {
-		var items=[];
-		
-		$.each(data,function(index,val){
-			//var lival ="<li><a href='menupopup.html' data-rel='dialog'>"+val.name+"</a></li>";
-			if(val.category==1){
-
-			}
-			item = '<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child ui-btn-up-c">';
-			item += '<div class="ui-btn-inner ui-li">' ;
-			item += 	'<div class="ui-btn-text">';
-			item += '<a href="menupopup.html" data-rel="dialog" class="ui-link-inherit">';	
-			item += val.name;
-			item += '</a></div></div></li>';
-			items.push(item);
-			//$("#test").append(lival);
-		});
-		console.log(data);
-		$("#test").append(items);
-		//$("#test1").append('</ul>
-		//	 </div>');
-	});*/
 	</script>
 
 
@@ -88,8 +74,6 @@
 	<div data-role="header" data-theme="a"  data-position="fixed">
 		<a href="main.html" data-icon="home" data-iconpos="notext" data-theme="b">    
 	    </a><h1>가을방아</h1>
-	    <a href="#" data-icon="grid">SiteMap</a>
-
 		<div data-role="navbar">
 		<ul>
 			<li><a href="intro.html">가을방아</a></li>
@@ -101,18 +85,8 @@
 	</div><!--헤더끝 컨텐트시작-->
 
 	<div data-role="content">
-		<div data-role="collapsible-set" data-collapsed-icon="arrow-l" data-expanded-icon="arrow-d" data-iconpos="right" data-mini="true" id="test1" data-corners="false">
-			 <div data-role="collapsible" data-mini="true">
+		<div data-role="collapsible-set" data-collapsed-icon="arrow-l" data-expanded-icon="arrow-d" data-iconpos="right" data-mini="true" id="menucategory" data-corners="false">
 
-			 	<h3>기타1</h3>
-			 	<ul data-role="listview" data-inset="false">
-			 		<li><a href="menupopup.html" data-rel="dialog">기타세부1</a></li>
-			 		<li><a href="menupopup.html" data-rel="dialog">기타세부2</a></li>
-			 		<li><a href="menupopup.html" data-rel="dialog">기타세부3</a></li>
-			 	</ul>
-			 </div>
-
-			<br><br>
 
 
 		</div>
@@ -120,6 +94,20 @@
 	<div data-role="footer" data-position="fixed">
 	@가을방아
 	</div>
+
+	<!--다이얼로그창-->
+	<div data-role="page" data-overlay-theme"e" id="dialogDiv">
+		<!--<div data-role="header" data-theme="b">
+			<h1>메뉴팝업</h1>
+		</div>
+
+		<div data-role="content" data-theme="d">
+			<h1>메뉴이름</h1>
+			<p>메뉴소개</p>
+			<a href="#" data-role="button" data-rel="back" data-theme="a" data-inline="true">뒤로가기</a>       
+		</div>-->
+	</div>
+
 </div>
 </body>
 </html>

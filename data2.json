@@ -20,10 +20,10 @@
             {
                 "dduk":
                     [
-                        { "id": "1001", "name": "간식떡1" ,"price":3000,"picture": "http://placehold.it/32x32","about": "Bisba"},
-                        { "id": "1002", "name": "간식떡2","price":3000,"picture": "http://placehold.it/32x32","about": "Bisba" },
-                        { "id": "1003", "name": "간식떡3","price":3000,"picture": "http://placehold.it/32x32","about": "Bisba" },
-                        { "id": "1004", "name": "간식떡4","price":3000,"picture": "http://placehold.it/32x32","about": "Bisba" }
+                        { "id": "2001", "name": "간식떡1" ,"price":3000,"picture": "http://placehold.it/32x32","about": "Bisba"},
+                        { "id": "2002", "name": "간식떡2","price":3000,"picture": "http://placehold.it/32x32","about": "Bisba" },
+                        { "id": "2003", "name": "간식떡3","price":3000,"picture": "http://placehold.it/32x32","about": "Bisba" },
+                        { "id": "2004", "name": "간식떡4","price":3000,"picture": "http://placehold.it/32x32","about": "Bisba" }
                     ]
             }
     }
